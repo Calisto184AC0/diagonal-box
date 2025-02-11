@@ -5,11 +5,17 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build:vite": "tsc && vite build",
+    "build:rollup": "rollup -c",
     "preview": "vite preview"
   },
   "devDependencies": {
-    "typescript": "~5.7.2",
-    "vite": "^6.1.0"
+    "@rollup/plugin-typescript": "12.1.2",
+    "rollup": "4.34.6",
+    "rollup-plugin-esbuild-minify": "1.2.0",
+    "tslib": "2.8.1",
+    "typescript": "~5.7.3",
+    "vite": "^6.1.0",
+    "vite-plugin-singlefile": "2.1.0"
   }
 }
