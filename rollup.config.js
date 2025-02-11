@@ -5,7 +5,8 @@ export default {
   input: "./src/services/config-diagonal-box.ts",
   output: {
     dir: "output",
-    format: "es",
+    format: "iife",
+    name: "configDiagonalBox",
   },
   plugins: [typescript(), minify()],
 };
