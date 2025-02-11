@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diagonal Example</title>
+    <script type="module" crossorigin>(function(){const o=document.createElement("link").relList;if(o&&o.supports&&o.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))i(t);new MutationObserver(t=>{for(const e of t)if(e.type==="childList")for(const s of e.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&i(s)}).observe(document,{childList:!0,subtree:!0});function n(t){const e={};return t.integrity&&(e.integrity=t.integrity),t.referrerPolicy&&(e.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?e.credentials="include":t.crossOrigin==="anonymous"?e.credentials="omit":e.credentials="same-origin",e}function i(t){if(t.ep)return;t.ep=!0;const e=n(t);fetch(t.href,e)}})();const d="div.diagonal-box_container",c=new Map;let l=null,a=0;const h=()=>document.querySelectorAll(d),g=r=>{r.style.display="flex",r.style.alignItems="end"},m=r=>{const o=r.getBoundingClientRect(),n=document.createElementNS("http://www.w3.org/2000/svg","svg");let i=o.height;const t=o.top-a;t<=0&&(i=Math.max(o.height+t,0)),n.setAttribute("preserveAspectRatio","none"),n.setAttribute("viewBox",`0 0 ${o.width} ${o.height}`),n.setAttribute("width","100%"),n.setAttribute("height",i.toString()),r.appendChild(n);const e=document.createElementNS("http://www.w3.org/2000/svg","line");e.setAttribute("vector-effect","non-scaling-stroke"),e.setAttribute("x1","0"),e.setAttribute("y1","100%"),e.setAttribute("x2","100%"),e.setAttribute("y2","0"),e.setAttribute("stroke","black"),e.setAttribute("stroke-width","2"),n.appendChild(e)},f=r=>{const o=r.getBoundingClientRect(),n=r.children[0];let i=o.height;const t=o.top-a;t<=0&&(i=Math.max(o.height+t,0)),n.setAttribute("height",i.toString())},u=()=>{c.size===0&&typeof l=="number"&&cancelAnimationFrame(l);for(const[r]of c)f(r);l=requestAnimationFrame(u)},p=r=>{var t;(r==null?void 0:r.logs)===!0&&console.log("CONFIG DIAGONAL BOX INIT");const o=h();(r==null?void 0:r.logs)===!0&&console.log(`NUMBER OF DIAGONAL BOXES: ${o.length}`);const n=(t=r==null?void 0:r.fixedHeader)==null?void 0:t.getBoundingClientRect();n!==void 0&&(a=n.height);const i=new IntersectionObserver(e=>{for(const s of e)s.target instanceof HTMLDivElement&&(s.isIntersecting?c.set(s.target,!0):c.delete(s.target));c.size>0&&requestAnimationFrame(u)});for(const e of o)g(e),m(e),i.observe(e)};p({fixedHeader:document.querySelector(".header")??void 0});</script>
+    <style rel="stylesheet" crossorigin>:root{font-family:Inter,system-ui,Avenir,Helvetica,Arial,sans-serif;line-height:1.5;font-weight:400;color-scheme:light dark;color:#ffffffde;background-color:#242424;font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}@media (prefers-color-scheme: light){:root{color:#213547;background-color:#fff}}.header{width:100%;height:50px;background:red;position:fixed}*,*:after,*:before{margin:0;padding:0;box-sizing:border-box;text-decoration:none}body{font-size:100%;list-style-type:none}</style>
+  </head>
+  <body>
+    <div class="header"></div>
+    <h1>Title</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <div class="diagonal-box_container" style="height: 50vh"></div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <div class="diagonal-box_container" style="height: 500px"></div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <div class="diagonal-box_container" style="height: 15rem"></div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente
+      architecto odio in vitae dicta nostrum reprehenderit facere dolor, nemo,
+      eaque alias. Iure obcaecati labore cupiditate ea adipisci eaque vitae
+      dignissimos?
+    </p>
+
+  </body>
+</html>
