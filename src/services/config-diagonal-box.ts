@@ -2,6 +2,7 @@ import { BOXES_SELECTOR } from "../utils/constants";
 
 const isBoxesInViewportMap = new Map<HTMLDivElement, true>();
 let animationId: number | null = null;
+let extraHeight = 0;
 
 const getBoxes = (): NodeListOf<HTMLDivElement> => {
   return document.querySelectorAll<HTMLDivElement>(BOXES_SELECTOR);
@@ -22,8 +23,10 @@ const addSvgAndLineToBox = (box: HTMLDivElement): void => {
 
   let currentHeight = boxRect.height;
 
-  if (boxRect.top <= 0) {
-    currentHeight = Math.max(boxRect.height + boxRect.top, 0);
+  const minHeight = boxRect.top - extraHeight;
+
+  if (minHeight <= 0) {
+    currentHeight = Math.max(boxRect.height + minHeight, 0);
   }
 
   svgElement.setAttribute("preserveAspectRatio", "none");
@@ -57,8 +60,10 @@ const updateSvgHeightToBox = (box: HTMLDivElement): void => {
 
   let currentHeight = boxRect.height;
 
-  if (boxRect.top <= 0) {
-    currentHeight = Math.max(boxRect.height + boxRect.top, 0);
+  const minHeight = boxRect.top - extraHeight;
+
+  if (minHeight <= 0) {
+    currentHeight = Math.max(boxRect.height + minHeight, 0);
   }
 
   svgElement.setAttribute("height", currentHeight.toString());
@@ -78,10 +83,25 @@ const animation: FrameRequestCallback = () => {
 
 interface ConfigDiagonalBoxOptions {
   fixedHeader?: Element;
+  logs?: boolean;
 }
 
 export const configDiagonalBox = (config?: ConfigDiagonalBoxOptions): void => {
+  if (config?.logs === true) {
+    console.log("CONFIG DIAGONAL BOX INIT");
+  }
+
   const boxes = getBoxes();
+
+  if (config?.logs === true) {
+    console.log(`NUMBER OF DIAGONAL BOXES: ${boxes.length}`);
+  }
+
+  const headerRect = config?.fixedHeader?.getBoundingClientRect();
+
+  if (headerRect !== undefined) {
+    extraHeight = headerRect.height;
+  }
 
   const observer = new IntersectionObserver((entities) => {
     for (const entity of entities) {
